@@ -1,24 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>밴드 API 서비스 안내</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>밴드 API 서비스 안내 | band-monitoring-tool</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif; line-height:1.6; margin:24px; }
+    h1 { margin-bottom: 0.4em; }
+    .tag { display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid #ddd; font-size:12px; }
+    .warn { color:#b00020; font-weight:700; }
+    code { background:#f6f8fa; padding:2px 6px; border-radius:4px; }
+    .box { border:1px solid #eee; border-radius:8px; padding:16px; background:#fafafa; }
+    a { color:#0a58ca; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
 </head>
 <body>
-    <h1>[음악밴드 실시간 게시글 모니터링 툴] 서비스 안내</h1>
-    <p>본 서비스는 네이버 밴드 API를 이용한 비공식 툴입니다.</p>
-    
-    <h2>정책 준수 안내 (심사 필수 항목)</h2>
-    <p style="color:red; font-weight: bold;">
-        **중요: 본 서비스는 네이버 밴드 API 약관을 엄격히 준수합니다.**
+  <h1>[음악밴드 실시간 게시글 모니터링 툴] 서비스 안내</h1>
+  <div class="tag">공개 베타</div>
+
+  <p>본 서비스는 네이버 밴드 API를 이용한 <strong>비공식 모니터링 도구</strong>입니다.</p>
+
+  <h2>정책 준수 안내 (심사 필수 항목)</h2>
+  <p class="warn">중요: 본 서비스는 네이버 밴드 API 약관을 엄격히 준수합니다.</p>
+  <ul>
+    <li>밴드 API로 취득한 데이터를 <strong>DB 저장(캐싱)·복제·가공·제3자 제공</strong>하지 않습니다.</li>
+    <li>목적은 <strong>실시간 조회/모니터링</strong> 기능 제공에 한정됩니다.</li>
+    <li>본 서비스는 네이버/밴드와 <strong>공식 제휴 관계가 아닙니다</strong>. 독립적으로 운영됩니다.</li>
+  </ul>
+
+  <h3>OAuth 리다이렉트 URI (심사 참고용)</h3>
+  <div class="box">
+    <p>다음 주소를 밴드 개발자 콘솔의 Redirect URI로 등록하십시오.</p>
+    <p><code>https://sangsun1981pqrk-tech.github.io/band-monitoring-tool/oauth</code></p>
+    <p>
+      테스트용 링크:
+      <a href="./oauth">/oauth</a>
     </p>
-    <ul>
-        <li>본 서비스는 밴드 API를 통해 취득한 데이터를 **데이터베이스에 저장(캐싱), 복제, 가공하거나 제3자에게 제공하지 않습니다.**</li>
-        <li>서비스 목적은 오로지 **실시간 모니터링 및 분석** 기능 제공에 한정됩니다.</li>
-        <li>본 서비스는 네이버 또는 밴드와 **공식적인 제휴 관계가 없으며** 독립적으로 운영됩니다.</li>
-    </ul>
-    
-    <h3>API 설정 정보 (심사 참고용)</h3>
-    <p>Redirect URI: https://sagae1981pqrk.github.io/band-monitoring-tool/oauth</p>
+  </div>
+
+  <h3>유의사항</h3>
+  <ul>
+    <li>GitHub Pages에서 동작하므로, <code>client_secret</code> 등 비밀키는 절대 노출하지 마세요.</li>
+    <li>필요 시 서버 중계(토큰 교환)를 별도 서버에서 처리하고, 이 페이지는 <em>코드 수신/확인</em>만 담당하게 하세요.</li>
+  </ul>
+
+  <p>© BYZENT / band-monitoring-tool</p>
 </body>
 </html>
